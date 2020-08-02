@@ -1,0 +1,5 @@
+#@data/values
+---
+cert_manager:
+    namespace: cert_manager
+    create_namespace: True

@@ -1,0 +1,17 @@
+#@ load("@ytt:data", "data")
+---
+name: "helm-values"
+installCRDs: True
+global:
+  leaderElection:
+    # Override the namespace used to store the ConfigMap for leader election
+    namespace: #@ data.values.cert_manager.namespace
+webhook:
+    image:
+        tag: v0.16.0
+cainjector:
+    image:
+        tag: v0.16.0
+extraArgs: 
+    -  #@ "--cluster-resource-namespace={}".format("data.values.cert_manager.namespaces")
+    - --enable-certificate-owner-ref=true
