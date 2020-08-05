@@ -1,7 +1,7 @@
 #@ load("@ytt:data", "data")
 ---
 name: "helm-values"
-installCRDs: True
+installCRDs: false
 global:
   leaderElection:
     # Override the namespace used to store the ConfigMap for leader election
