@@ -14,4 +14,3 @@ cainjector:
         tag: v0.16.0
 extraArgs: 
     -  #@ "--cluster-resource-namespace={}".format("data.values.cert_manager.namespaces")
-    - --enable-certificate-owner-ref=true
