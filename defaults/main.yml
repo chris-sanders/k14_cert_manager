@@ -1,6 +1,7 @@
 ---
 # defaults file for cert-manager
-k14_app: cert-manager
-k14_helm_repo: https://github.com/jetstack/cert-manager.git
-k14_helm_ref: v0.16.0
-k14_helm_path: deploy/charts/cert-manager
+k14:
+  app: cert-manager
+  helm_repo: https://github.com/jetstack/cert-manager.git
+  helm_ref: v0.16.0
+  helm_path: deploy/charts/cert-manager
