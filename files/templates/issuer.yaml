@@ -20,4 +20,24 @@ spec:
           accountSecretRef:
               name: acme-dns
               key: acmedns.json
+---
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-production
+spec:
+  acme:
+    email: #@ data.values.cert_manager.admin_email
+    server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: letsencrypt-production-account-key
+    solvers:
+    - dns01:
+        cnameStrategy: Follow
+        acmeDNS:
+          host: #@ data.values.cert_manager.acme_host
+          accountSecretRef:
+              name: acme-dns
+              key: acmedns.json
+
 #@ end
