@@ -2,6 +2,4 @@
 # defaults file for cert-manager
 k14:
   app: cert-manager
-  helm_repo: https://github.com/jetstack/cert-manager.git
-  helm_ref: v0.16.0
-  helm_path: deploy/charts/cert-manager
+  helm_server: https://charts.jetstack.io cert-manager
